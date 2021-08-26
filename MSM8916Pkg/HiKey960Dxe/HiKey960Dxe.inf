@@ -1,0 +1,42 @@
+#
+#  Copyright (c) 2018, Linaro Limited. All rights reserved.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+
+[Defines]
+  INF_VERSION                    = 0x0001001a
+  BASE_NAME                      = HiKey960Dxe
+  FILE_GUID                      = 6d824b2c-640e-4643-b9f2-9c09e8bff429
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = HiKey960EntryPoint
+
+[Sources.common]
+  HiKey960Dxe.c
+
+[Packages]
+  EmbeddedPkg/EmbeddedPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  BaseMemoryLib
+  CacheMaintenanceLib
+  DxeServicesTableLib
+  IoLib
+  PcdLib
+  TimerLib
+  UefiDriverEntryPoint
+  UefiLib
+
+[Protocols]
+  gEfiDevicePathFromTextProtocolGuid
+  gEfiLoadedImageProtocolGuid
+  gEmbeddedGpioProtocolGuid
+
+[Guids]
+  gEfiEndOfDxeEventGroupGuid
+
+[Depex]
+  TRUE
