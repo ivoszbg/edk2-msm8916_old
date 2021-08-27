@@ -28,7 +28,7 @@
 #include <Protocol/PlatformBootManager.h>
 #include <Protocol/PlatformVirtualKeyboard.h>
 
-#include "MSM8916Dxe.h"
+#include "../../Include/MSM8916Dxe/MSM8916Dxe.h"
 
 VOID
 InitPeripherals (

@@ -138,7 +138,7 @@ READ_LOCK_STATUS   = TRUE
   #
   # Platform Dxe
   #
-  INF MSM8916Pkg/MSM8916Dxe/MSM8916Dxe.inf
+  INF MSM8916Pkg/Drivers/MSM8916Dxe/MSM8916Dxe.inf
 
   #
   # USB Host Support
