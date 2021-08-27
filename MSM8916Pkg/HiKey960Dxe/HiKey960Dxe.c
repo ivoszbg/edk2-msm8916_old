@@ -35,6 +35,14 @@ InitPeripherals (
   IN VOID
   )
 {
+	// set the screen
+	//for (UINT64 addr = 0x83000000ull; addr < 0x83000000ull + (720 * 1280 * 4); addr += 4) {
+	//	MmioWrite32(addr, 0x00ff80); // green
+	//}
+	// reboot
+	MmioWrite32(0x004ab000, 0);
+	// spin forever
+	while (1) {}
 }
 
 /**
@@ -60,7 +68,7 @@ OnEndOfDxe (
 
 EFI_STATUS
 EFIAPI
-Pixel3XLEntryPoint (
+HiKey960EntryPoint (
   IN EFI_HANDLE         ImageHandle,
   IN EFI_SYSTEM_TABLE   *SystemTable
   )

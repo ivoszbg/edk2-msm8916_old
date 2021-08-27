@@ -20,11 +20,8 @@
 #define DDR_ATTRIBUTES_CACHED           ARM_MEMORY_REGION_ATTRIBUTE_WRITE_BACK
 #define DDR_ATTRIBUTES_UNCACHED         ARM_MEMORY_REGION_ATTRIBUTE_UNCACHED_UNBUFFERED
 
-#define HI3660_PERIPH_BASE              0xE0000000
-#define HI3660_PERIPH_SZ                0x20000000
-
-#define HIKEY960_EXTRA_SYSTEM_MEMORY_BASE  0x0000000100000000
-#define HIKEY960_EXTRA_SYSTEM_MEMORY_SIZE  0x0000000020000000
+#define HI3660_PERIPH_BASE              0x00000000
+#define HI3660_PERIPH_SZ                0x60000000
 
 #define HIKEY960_MEMORY_SIZE               0x0000000100000000
 
@@ -32,12 +29,14 @@ STATIC struct HiKey960ReservedMemory {
   EFI_PHYSICAL_ADDRESS         Offset;
   EFI_PHYSICAL_ADDRESS         Size;
 } HiKey960ReservedMemoryBuffer [] = {
+/*
   { 0x1AC00000, 0x00098000 },    // ARM-TF reserved
   { 0x32000000, 0x00100000 },    // PSTORE/RAMOOPS
   { 0x32100000, 0x00001000 },    // ADB REBOOT "REASON"
   { 0x3E000000, 0x02000000 },    // TEE OS
   { 0x89B80000, 0x00100000 },    // MCU Code reserved
   { 0x89C80000, 0x00040000 }     // MCU reserved
+*/
 };
 
 /**
@@ -133,7 +132,7 @@ ArmPlatformGetVirtualMemoryMap (
 
   Index = 0;
 
-  // DDR - 3.0GB section
+  // DDR - 1.5GB section
   VirtualMemoryTable[Index].PhysicalBase    = PcdGet64 (PcdSystemMemoryBase);
   VirtualMemoryTable[Index].VirtualBase     = PcdGet64 (PcdSystemMemoryBase);
   VirtualMemoryTable[Index].Length          = PcdGet64 (PcdSystemMemorySize);
