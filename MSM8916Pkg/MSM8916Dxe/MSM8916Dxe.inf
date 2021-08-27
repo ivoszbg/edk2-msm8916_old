@@ -6,14 +6,14 @@
 
 [Defines]
   INF_VERSION                    = 0x0001001a
-  BASE_NAME                      = HiKey960Dxe
+  BASE_NAME                      = MSM8916Dxe
   FILE_GUID                      = 6d824b2c-640e-4643-b9f2-9c09e8bff429
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = HiKey960EntryPoint
+  ENTRY_POINT                    = MSM8916EntryPoint
 
 [Sources.common]
-  HiKey960Dxe.c
+  MSM8916Dxe.c
 
 [Packages]
   EmbeddedPkg/EmbeddedPkg.dec

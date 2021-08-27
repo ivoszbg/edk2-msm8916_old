@@ -18,7 +18,7 @@
 #
 ################################################################################
 
-[FD.BL33_AP_UEFI]
+[FD.MSM8916_UEFI]
 BaseAddress   = 0x80080000|gArmTokenSpaceGuid.PcdFdBaseAddress  # The base address of the Firmware in NOR Flash.
 Size          = 0x00200000|gArmTokenSpaceGuid.PcdFdSize         # The size in bytes of the FLASH Device
 ErasePolarity = 1
@@ -138,7 +138,7 @@ READ_LOCK_STATUS   = TRUE
   #
   # Platform Dxe
   #
-  INF MSM8916Pkg/HiKey960Dxe/HiKey960Dxe.inf
+  INF MSM8916Pkg/MSM8916Dxe/MSM8916Dxe.inf
 
   #
   # USB Host Support

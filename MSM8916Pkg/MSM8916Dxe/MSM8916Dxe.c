@@ -28,7 +28,7 @@
 #include <Protocol/PlatformBootManager.h>
 #include <Protocol/PlatformVirtualKeyboard.h>
 
-#include "HiKey960Dxe.h"
+#include "MSM8916Dxe.h"
 
 VOID
 InitPeripherals (
@@ -68,7 +68,7 @@ OnEndOfDxe (
 
 EFI_STATUS
 EFIAPI
-HiKey960EntryPoint (
+MSM8916EntryPoint (
   IN EFI_HANDLE         ImageHandle,
   IN EFI_SYSTEM_TABLE   *SystemTable
   )

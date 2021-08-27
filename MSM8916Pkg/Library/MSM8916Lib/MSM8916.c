@@ -13,7 +13,7 @@
 
 #include <Ppi/ArmMpCoreInfo.h>
 
-ARM_CORE_INFO mHiKey960InfoTable[] = {
+ARM_CORE_INFO mMSM8916InfoTable[] = {
   {
     // Cluster 0, Core 0
     0x0, 0x0,
@@ -112,8 +112,8 @@ PrePeiCoreGetMpCoreInfo (
   )
 {
   // Only support one cluster
-  *CoreCount    = sizeof(mHiKey960InfoTable) / sizeof(ARM_CORE_INFO);
-  *ArmCoreTable = mHiKey960InfoTable;
+  *CoreCount    = sizeof(mMSM8916InfoTable) / sizeof(ARM_CORE_INFO);
+  *ArmCoreTable = mMSM8916InfoTable;
   return EFI_SUCCESS;
 }
 

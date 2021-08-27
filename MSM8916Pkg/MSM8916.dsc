@@ -10,7 +10,7 @@
 #
 ################################################################################
 [Defines]
-  PLATFORM_NAME                  = HiKey960
+  PLATFORM_NAME                  = MSM8916
   PLATFORM_GUID                  = bd1a557e-4423-466a-a462-38439588fd37
   PLATFORM_VERSION               = 0.2
   DSC_SPECIFICATION              = 0x00010019
@@ -18,7 +18,7 @@
   SUPPORTED_ARCHITECTURES        = AARCH64
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = MSM8916Pkg/HiKey960.fdf
+  FLASH_DEFINITION               = MSM8916Pkg/MSM8916.fdf
 
   DEFINE CONFIG_NO_DEBUGLIB      = TRUE
 
@@ -27,7 +27,7 @@
 
 [LibraryClasses.common]
   ArmLib|ArmPkg/Library/ArmLib/ArmBaseLib.inf
-  ArmPlatformLib|MSM8916Pkg/Library/HiKey960Lib/HiKey960Lib.inf
+  ArmPlatformLib|MSM8916Pkg/Library/MSM8916Lib/MSM8916Lib.inf
 
   CapsuleLib|MdeModulePkg/Library/DxeCapsuleLibNull/DxeCapsuleLibNull.inf
   UefiBootManagerLib|MdeModulePkg/Library/UefiBootManagerLib/UefiBootManagerLib.inf
@@ -171,7 +171,7 @@
   #
   # Platform Dxe
   #
-  MSM8916Pkg/HiKey960Dxe/HiKey960Dxe.inf
+  MSM8916Pkg/MSM8916Dxe/MSM8916Dxe.inf
 
   #
   # USB Host Support
