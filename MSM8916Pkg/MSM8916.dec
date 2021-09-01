@@ -21,3 +21,10 @@
 ################################################################################
 [Guids.common]
   gMSM8916TokenSpaceGuid        = { 0x99a14446, 0xaad7, 0xe460, {0xb4, 0xe5, 0x1f, 0x79, 0xaa, 0xa4, 0x93, 0xfd } }
+
+[PcdsFixedAtBuild.common]
+  # Simple FrameBuffer
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferAddress|0x00400000|UINT32|0x0000a400 # 0x7C400000
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferWidth|1080|UINT32|0x0000a401
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferHeight|1920|UINT32|0x0000a402
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403

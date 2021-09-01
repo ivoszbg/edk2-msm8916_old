@@ -120,6 +120,8 @@ READ_LOCK_STATUS   = TRUE
   # Multiple Console IO support
   #
   INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
+  INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+  INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
   INF MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
   INF MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
 
@@ -136,9 +138,10 @@ READ_LOCK_STATUS   = TRUE
   INF EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
   #
-  # Platform Dxe
+  # Platform Drivers
   #
   INF MSM8916Pkg/Drivers/MSM8916Dxe/MSM8916Dxe.inf
+  INF MSM8916Pkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 
   #
   # USB Host Support

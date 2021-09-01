@@ -29,8 +29,8 @@ STATIC struct MSM8916ReservedMemory {
   EFI_PHYSICAL_ADDRESS         Offset;
   EFI_PHYSICAL_ADDRESS         Size;
 } MSM8916ReservedMemoryBuffer [] = {
+  { 0x8e000000, 0x01400000 },    // fb
 /*
-  { 0x1AC00000, 0x00098000 },    // ARM-TF reserved
   { 0x32000000, 0x00100000 },    // PSTORE/RAMOOPS
   { 0x32100000, 0x00001000 },    // ADB REBOOT "REASON"
   { 0x3E000000, 0x02000000 },    // TEE OS

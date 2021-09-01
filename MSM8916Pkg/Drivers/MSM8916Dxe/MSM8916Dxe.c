@@ -22,6 +22,7 @@
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
 
+#include <Protocol/Cpu.h>
 #include <Protocol/DevicePathFromText.h>
 #include <Protocol/EmbeddedGpio.h>
 #include <Protocol/LoadedImage.h>
@@ -30,19 +31,29 @@
 
 #include "../../Include/MSM8916Dxe/MSM8916Dxe.h"
 
+EFI_CPU_ARCH_PROTOCOL     *gCpu;
+
 VOID
 InitPeripherals (
   IN VOID
   )
 {
+  EFI_STATUS            Status;
+  // https://lists.01.org/pipermail/edk2-devel/2017-August/013417.html
+  Status = gCpu->SetMemoryAttributes (gCpu, 0xa1a10000, 0x200000,
+                  EFI_MEMORY_UC | EFI_MEMORY_XP);
+  ASSERT_EFI_ERROR (Status);
+  Status = gCpu->SetMemoryAttributes (gCpu, 0x9d400000, 0x2400000,
+                  EFI_MEMORY_WC | EFI_MEMORY_XP);
+  ASSERT_EFI_ERROR (Status);
 	// set the screen
-	//for (UINT64 addr = 0x83000000ull; addr < 0x83000000ull + (720 * 1280 * 4); addr += 4) {
-	//	MmioWrite32(addr, 0x00ff80); // green
+	//for (UINT64 addr = 0x8e000000ull; addr < 0x8e000000ull + (720 * 1280 * 3); addr += 3) {
+	//	MmioWrite32(addr, 0xFF0320); // green
 	//}
 	// reboot
-	MmioWrite32(0x004ab000, 0);
+	//MmioWrite32(0x004ab000, 0);
 	// spin forever
-	while (1) {}
+	//while (1) {}
 }
 
 /**
@@ -75,6 +86,9 @@ MSM8916EntryPoint (
 {
   EFI_STATUS            Status;
   EFI_EVENT             EndOfDxeEvent;
+
+  Status = gBS->LocateProtocol (&gEfiCpuArchProtocolGuid, NULL, (VOID **)&gCpu);
+  ASSERT_EFI_ERROR(Status);
 
   InitPeripherals ();
 

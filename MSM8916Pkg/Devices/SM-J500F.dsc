@@ -29,3 +29,7 @@
   # System Memory (1.5GB)
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x60000000
+  
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferAddress|0x8e000000
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferWidth|720
+  gMSM8916TokenSpaceGuid.PcdMipiFrameBufferHeight|1280
